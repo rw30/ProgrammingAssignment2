@@ -1,7 +1,6 @@
 ## This set of functions inverts a matrix
-## also taking care that the value gets stored in the cache 
-##(by the use of superAssignment operator), so that
-## in case that the matrix was perviously inverted
+## also taking care that the iverted matrix gets stored in the cache 
+## so that in case that the matrix was perviously inverted
 ## the inversion process doesn't have to be executed again
 ############################################################
 ############################################################
@@ -31,11 +30,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Function checks if inverted matrix  already exists in cache
-## If exists, it is returned. If it doesn't, it gets set and returned
+## Function checks if inverted matrix (of matrix currently passed as
+## a parameter of the function) already exists in cache
+## If exists, it is returned. If it doesn't, it is set and returned
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+        
      
      m <- x$getinv()
      if(!is.null(m)) {
